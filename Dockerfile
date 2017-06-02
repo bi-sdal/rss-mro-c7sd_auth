@@ -1,4 +1,4 @@
-FROM dads2busy/c7-ssh-ldap-mro
+FROM sdal/mro-ldap-ssh-c7
 MAINTAINER "Aaron D. Schroeder" <aschroed@vt.edu>
 
 ## Add RStudio binaries to PATH
