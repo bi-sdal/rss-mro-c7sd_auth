@@ -1,5 +1,3 @@
-Dockerfile
-[chend@snowmane c7-ssh-ldap-mro-rss]$ cat Dockerfile 
 FROM dads2busy/c7-ssh-ldap-mro
 MAINTAINER "Aaron D. Schroeder" <aschroed@vt.edu>
 
