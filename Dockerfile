@@ -5,9 +5,7 @@ MAINTAINER "Aaron D. Schroeder" <aschroed@vt.edu>
 ENV PATH /usr/lib/rstudio-server/bin/:$PATH
 
 ## Install Download Prerequisites
-RUN yum install -y which
 RUN cp /etc/pam.d/login /etc/pam.d/rstudio
-RUN yum -y install dejavu-sans-fonts dejavu-serif-font
 
 ## Download and Install Rstudio-server
 RUN curl -O https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-1.0.143-x86_64.rpm
