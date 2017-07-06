@@ -15,6 +15,9 @@ RUN systemctl enable rstudio-server
 # Add default rstudio user with pass rstudio
 RUN useradd -m -d /home/rstudio rstudio && echo rstudio:rstudio | chpasswd
 
+# Get the Rprofile.site file
+RUN wget -O /usr/lib64/R/etc/Rprofile.site https://raw.githubusercontent.com/bi-sdal/mro-ldap-ssh-c7/master/Rprofile.site
+
 EXPOSE 8787
 
 CMD ["/lib/systemd/systemd"]
