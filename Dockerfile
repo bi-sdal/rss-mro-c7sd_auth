@@ -20,5 +20,7 @@ RUN useradd -m -d /home/rstudio rstudio && echo rstudio:rstudio | chpasswd
 
 EXPOSE 8787
 
+RUN yum install -y cronie && systemctl enable crond
+
 CMD ["/lib/systemd/systemd"]
 #CMD ["/usr/sbin/init"]
