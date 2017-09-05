@@ -8,8 +8,8 @@ ENV PATH /usr/lib/rstudio-server/bin/:$PATH
 RUN cp /etc/pam.d/login /etc/pam.d/rstudio
 
 ## Download and Install Rstudio-server
-RUN curl -O https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-1.0.143-x86_64.rpm
-RUN yum install -y --nogpgcheck rstudio-server-rhel-1.0.143-x86_64.rpm
+RUN curl -O https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-1.1.353-x86_64.rpm
+RUN yum install -y --nogpgcheck rstudio-server-rhel-*.rpm
 RUN systemctl enable rstudio-server
 
 # Add default rstudio user with pass rstudio
