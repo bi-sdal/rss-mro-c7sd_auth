@@ -1,8 +1,0 @@
-[Unit]
-Description=Copy pam.d login to rstudio
-
-[Service]
-ExecStart=/usr/bin/cp -f /etc/pam.d/login /etc/pam.d/rstudio
-
-[Install]
-WantedBy=multi-user.target
