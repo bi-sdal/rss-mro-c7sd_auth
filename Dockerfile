@@ -8,9 +8,8 @@ ENV PATH /usr/lib/rstudio-server/bin/:$PATH
 RUN cp /etc/pam.d/login /etc/pam.d/rstudio
 
 ## Download and Install Rstudio-server
-RUN apt-get -y install curl gdebi-core && \
-    curl -O https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-1.1.423-x86_64.rpm && \
-    gdebi --n rstudio-server-*-amd64.deb
+RUN curl -O https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-1.1.423-x86_64.rpm && \
+    yum install -y --nogpgcheck rstudio-server-rhel-*.rpm
 
 RUN systemctl enable rstudio-server
 
