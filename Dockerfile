@@ -5,7 +5,8 @@ MAINTAINER "Daniel Chen" <chend@vt.edu>
 ENV PATH /usr/lib/rstudio-server/bin/:$PATH
 
 ## Install Download Prerequisites
-RUN cp /etc/pam.d/login /etc/pam.d/rstudio
+RUN yum install -y initscripts && \
+    cp /etc/pam.d/login /etc/pam.d/rstudio
 
 ## Download and Install Rstudio-server
 RUN curl -O https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-1.1.423-x86_64.rpm && \
