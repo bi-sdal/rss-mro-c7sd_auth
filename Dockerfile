@@ -1,4 +1,4 @@
-FROM sdal/r-ldap-ssh-c7
+FROM sdal/mro-c7sd_auth
 MAINTAINER "Daniel Chen" <chend@vt.edu>
 
 ## Add RStudio binaries to PATH
@@ -9,7 +9,7 @@ RUN cp /etc/pam.d/login /etc/pam.d/rstudio
 
 ## Download and Install Rstudio-server
 RUN apt-get -y install curl gdebi-core && \
-    curl -O https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-1.1.372-amd64.deb && \
+    curl -O https://s3.amazonaws.com/rstudio-dailybuilds/rstudio-server-rhel-1.1.423-x86_64.rpm && \
     gdebi --n rstudio-server-*-amd64.deb
 
 RUN systemctl enable rstudio-server
