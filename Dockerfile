@@ -20,7 +20,10 @@ RUN useradd -m -d /home/rstudio rstudio && echo rstudio:rstudio | chpasswd
 # Get the Rprofile.site file
 # RUN wget -O /usr/lib64/R/etc/Rprofile.site https://raw.githubusercontent.com/bi-sdal/mro-ldap-ssh-c7/master/Rprofile.site
 
-RUN yum install -y htop
+RUN yum install -y htop nano emacs vim && \
+    yum install -y openssh openssh-server openssh-clients openssl-libs && \
+    cp /etc/ssh/sshd_config /etc/ssh/sshd_config.orig && \
+    systemctl enable sshd.service
 
 EXPOSE 8787
 
